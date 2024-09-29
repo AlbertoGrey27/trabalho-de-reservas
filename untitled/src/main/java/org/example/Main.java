@@ -1,23 +1,27 @@
 package org.example;
 import java.io.*;
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Leitor lei = new Leitor();
-        Escritor es = new Escritor();
-        String resp = "";
+        Área ar = new Área();
+        Espécie es = new Espécie();
+        int resp = 0;
         Scanner sc = new Scanner(System.in);
-        while (resp != sair){
+        do {
             System.out.print("1.Cadastrar espécies\n2.Monitorar áreas\n3.Registrar um avistamento\n4.Listar áreas e espécies\n5.Sair\n\nDigite o número correspondente a sua escolha:");
             resp = sc.nextInt();
             if (resp == 1){
-                // cadastra espécie com nome, tipo(planta ou animal) e status(ameaçada ou n);
+                es.escreverCSV("C:\\Users\\Usuario\\Desktop\\intelij\\untitled\\src\\teste1 - Página1.csv");
             }
             else if(resp == 2){
-                // registra as áreas com nome, loc e tamanho em hectares
+                ar.escreverCSV2("C:\\Users\\Usuario\\Desktop\\intelij\\untitled\\src\\teste1 - Página2.csv");
             }
             else if (resp == 3){
-                //registra os avistamentos com data e nome da espécie em um área existente
+                //registra avistamento.
+            }
+            else if (resp == 4){
+                lei.lerCSV("C:\\Users\\Usuario\\Desktop\\intelij\\untitled\\src\\teste1 - Página2.csv");
             }
             else if (resp == 5){
                 break;
@@ -25,6 +29,6 @@ public class Main {
             else{
                 System.out.println("Digite um input válido!");
             }
-        }
+        }while (resp != 5);
     }
 }
