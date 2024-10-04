@@ -17,7 +17,7 @@ public class Main {
             resp = sc.nextInt();
 
             if (resp == 1){
-                if (areas.size() >= 200){
+                if (areas.size() >= 20){
                     System.out.println("não existe mais espaço para registrar áreas");
                 }
                 else if (areas.isEmpty()){
