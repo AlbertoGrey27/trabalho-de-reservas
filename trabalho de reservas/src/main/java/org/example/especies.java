@@ -14,6 +14,10 @@ public class especies {
     }
     public especies() { }
 
+    public void mostrarInfoEspecie() {
+        System.out.printf("{ Nome: %s  Tipo: %s Ameaçada: %b }", nome, tipo, ameacada);
+    }
+
     public String getNome() {return nome;}
 
     public void setNome(String nome) {this.nome = nome;}

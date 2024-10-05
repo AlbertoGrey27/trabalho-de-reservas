@@ -58,9 +58,8 @@ public class Area {
     }
 
 
-    public void listadeAreas() {
-        System.out.println("Area{"+"nome='" + nome + '\'' + ", localizacao=" + localizacao + ", area=" + area + ", id=" + id + '}');
-        ;
+    public void mostrarInfoArea() {
+        System.out.printf("Area{ nome: %s localizacao: %d area: %d id: %d}\n", nome, localizacao, area, id);
     }
 
     public void printEspecies() {
