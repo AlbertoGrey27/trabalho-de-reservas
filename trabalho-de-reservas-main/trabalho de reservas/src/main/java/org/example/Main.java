@@ -1,12 +1,13 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int resp;
+        String resp;
         int areasId = 0;
         int especiesId = 0;
         Scanner sc = new Scanner(System.in);
@@ -15,9 +16,9 @@ public class Main {
 
         do{
             System.out.print("1.Cadastrar espécies\n2.Cadastrar área\n3.Registrar um avistamento\n4.Listar áreas e espécies\n5.Sair\n\nDigite o número correspondente a sua escolha:"); // menu
-            resp = sc.nextInt();
+            resp = sc.nextLine();
 
-            if (resp == 1){
+            if (Objects.equals(resp, "1")){
                 LimparConsole.clear();
                 if (areas.size() >= 20){
                     System.out.println("Não existe mais espaço para registrar áreas"); // max áreas
@@ -52,7 +53,7 @@ public class Main {
                     // LimparConsole.clear();
                 }
             }
-            else if (resp == 2){
+            else if (Objects.equals(resp, "2")){
                 System.out.print("Digite um nome para a área: "); //mais de 0 áreas registradas.
                 String nome = sc.next();
                 System.out.print("\nDigite a localização da área(em números): ");
@@ -63,7 +64,7 @@ public class Main {
                 areasId++;
                 LimparConsole.clear();
             }
-            else if (resp == 3){
+            else if (Objects.equals(resp, "3")){
                 LimparConsole.clear();
                 System.out.println("Digite o id da espécie que foi avistada: ");
                 for (int i = 0 ; i < areas.size(); i++){
@@ -91,7 +92,7 @@ public class Main {
                     System.out.println("Essa espécie não está na sua área correta. Muito obrigado pela cooperação!");
                 }
             }
-            else if (resp == 4){
+            else if (Objects.equals(resp, "4")){
                 LimparConsole.clear();
                 for (int i = 0; i < areas.size(); i++){
                     areas.get(i).mostrarInfoArea();
@@ -101,12 +102,12 @@ public class Main {
 
 
             }
-            else if (resp == 5){
+            else if (Objects.equals(resp, "5")){
                 break;
             }
             else{
                 System.out.println("Digite um input válido!");
             }
-        }while (resp != 5);
+        }while (!Objects.equals(resp, "5"));
     }
 }
